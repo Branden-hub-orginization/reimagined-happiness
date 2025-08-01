@@ -1,0 +1,23 @@
+## 📜 `.github/workflows/docker-build.yml`
+```yaml
+name: Docker Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Build Docker Image
+      run: docker build -t agi-mesh:latest .
+    - name: Save Image
+      run: docker save agi-mesh:latest | gzip > agi-mesh.tar.gz
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: agi-mesh-image
+        path: agi-mesh.tar.gz
