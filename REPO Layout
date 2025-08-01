@@ -1,0 +1,16 @@
+agi-mesh/
+ ├── agi_mesh.py
+ ├── agent.py
+ ├── cognitive_core.py
+ ├── weaver_bus.py
+ ├── ui.py
+ ├── workflows.py
+ ├── plugins/
+ │    └── __init__.py
+ ├── Dockerfile
+ ├── docker-compose.yml
+ ├── requirements.txt
+ ├── README.md
+ └── .github/
+     └── workflows/
+         └── docker-build.yml
